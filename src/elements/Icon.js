@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export const Icon = props => {
   const { size = 10 } = props;
@@ -13,6 +13,9 @@ export const Icon = props => {
           />
         </svg>
       );
+
+    
+    
     }
   }
 };
