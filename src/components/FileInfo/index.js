@@ -51,8 +51,8 @@ class FileInfo extends Component {
       <Fragment>
         <Icon>
           <Logo>
-            <Img src={entry.type == 'file' ? FileIcon : FolderIcon} />
-            {entry.type == 'file' ? <span>{`.${ext}`}</span> : ''}
+            <Img src={entry.type === 'file' ? FileIcon : FolderIcon} />
+            {entry.type === 'file' ? <span>{`.${ext}`}</span> : ''}
           </Logo>
         </Icon>
 

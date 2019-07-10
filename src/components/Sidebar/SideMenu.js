@@ -2,10 +2,10 @@ import React, { Component, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 
 import { FILE } from '../../utils/constants';
-import { entriesAreSame } from '../../utils/fileSystem';
+
 import Collapse from './Collapse';
 
-import { LinkContainer, DropDownIcon, Line } from './styles';
+import { LinkContainer, DropDownIcon } from './styles';
 
 class SideMenu extends Component {
   state = {
@@ -31,7 +31,7 @@ class SideMenu extends Component {
     let i = value + 1;
     return children && children.length > 0
       ? children.map((entry, _) => {
-          if (entry.type == FILE) return;
+          if (entry.type === FILE) return "";
           const flag = entry.children
             ? entry.children.length
               ? true

@@ -9,7 +9,7 @@ const showPath = path => {
   const len = pathArr.length;
   const arr = [<span key={0}>{` root `}</span>];
 
-  pathArr.map((p, _) => {
+  pathArr.map((p, _) => { 
     _ === len - 1
       ? arr.push(
           <span className="currentPath" key={_ + 1}>

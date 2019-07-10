@@ -159,8 +159,8 @@ class Icon extends Component {
     return (
       <Container ref={this.nodeRef}>
         <Logo onClick={() => this.enterFolder()}>
-          <Img src={entry.type == FILE ? FileIcon : FolderIcon} />
-          {entry.type == FILE ? <span>{`.${ext}`}</span> : ''}
+          <Img src={entry.type === FILE ? FileIcon : FolderIcon} />
+          {entry.type === FILE ? <span>{`.${ext}`}</span> : ''}
         </Logo>
         <Name>{entry.name}</Name>
         {this.state.visible && (

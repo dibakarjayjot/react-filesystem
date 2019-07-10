@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Route } from 'react-router-dom';
 
 import Navigation from '../components/Navigation';
-import SearchBar from '../components/SearchBar';
+
 import Grid from '../components/Grid';
 
 export default class ViewFiles extends Component {
@@ -12,7 +12,7 @@ export default class ViewFiles extends Component {
       <Container>
         <TopBar>
           <Navigation />
-          <SearchBar />
+          
         </TopBar>
         <Route path="*" component={Grid} />
       </Container>

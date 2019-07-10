@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CollapseContainer, Line } from './styles';
+import { CollapseContainer} from './styles';
 
 function Collapse(props) {
   const [visible, handleVisible] = useState(false);

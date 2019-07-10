@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import md5 from 'md5';
 
-import SEO from '../SEO';
 
-import { showPathEntries, entriesAreSame } from '../../utils/fileSystem';
+
+import { showPathEntries } from '../../utils/fileSystem';
 import { FOLDER } from '../../utils/constants';
 import { addEntry, deleteEntry } from '../../actions/fileSystem';
 
 import Icon from '../Icon';
 import Add from '../Add';
 
-import FolderIcon from '../../assets/img/folder.png';
+
 
 class Grid extends Component {
   componentDidMount() {
@@ -38,12 +38,7 @@ class Grid extends Component {
   render() {
     return (
       <Container>
-        <SEO
-          url={this.props.match.url}
-          title={this.props.match.url}
-          image={FolderIcon}
-          description={this.props.match.url}
-        />
+        
         {this.props.entry.map((entry, _) => (
           <Icon
             entry={entry}
