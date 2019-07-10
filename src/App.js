@@ -1,26 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+import { BrowserRouter } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+
+import '../src/assets/styles/app.scss';
+
+import reducers from './reducers';
+import { ViewFiles } from './pages/index';
+
+import generatedummyFileSystem from './utils/dummyFileSystem';
+
+const store = createStore(
+  reducers,
+  {
+    fileSystem:
+      localStorage.getItem('fileSystem') &&
+      Object.keys(localStorage.getItem('fileSystem')).length > 0
+        ? JSON.parse(localStorage.getItem('fileSystem'))
+        : generatedummyFileSystem()
+  },
+  composeWithDevTools()
+);
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Provider store={store}>
+    <Router>
+      <BrowserRouter>
+        <Fragment>
+          <Sidebar />
+          <ViewFiles />
+        </Fragment>
+      </BrowserRouter>
+    </Router>
+  </Provider>
+    
+
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
