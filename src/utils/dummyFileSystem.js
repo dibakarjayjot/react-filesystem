@@ -5,7 +5,7 @@ const dummyFileSystem = {
     path: '/',
     size: 0,
     date: '2019-07-10',
-    creatorName: 'admin',
+    creatorName: 'Dibakar',
     parentPath: null,
     parentID: null,
     children: [

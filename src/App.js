@@ -1,18 +1,13 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
 import { BrowserRouter } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-
 import '../src/assets/styles/app.scss';
-
 import reducers from './reducers';
 import { ViewFiles } from './pages/index';
-
 import generatedummyFileSystem from './utils/dummyFileSystem';
 
 const store = createStore(
@@ -26,7 +21,6 @@ const store = createStore(
   },
   composeWithDevTools()
 );
-
 
 function App() {
   return (
@@ -42,7 +36,6 @@ function App() {
     </Router>
   </Provider>
     
-
   );
 }
 
